@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 환경 변수 설정
-export WORK="/root/Hanafuda-Bot"
+export WORK="/root/hanafuda"
 export NVM_DIR="$HOME/.nvm"
 
 # 색상 정의
@@ -13,7 +13,6 @@ NC='\033[0m' # 색상 초기화
 
 echo -e "${GREEN}Hana 봇을 설치합니다.${NC}"
 echo -e "${GREEN}스크립트작성자: https://t.me/kjkresearch${NC}"
-echo -e "${GREEN}출처: https://github.com/airdropinsiders/Hanafuda-Bot${NC}"
 
 echo -e "${GREEN}설치 옵션을 선택하세요:${NC}"
 echo -e "${YELLOW}1. Hana 봇 새로 설치${NC}"
@@ -37,7 +36,7 @@ case $choice in
 
     # GitHub에서 코드 복사
     echo -e "${YELLOW}GitHub에서 코드 복사 중...${NC}"
-    git clone https://github.com/airdropinsiders/Hanafuda-Bot.git
+    git clone https://github.com/KangJKJK/hanafuda.git
     cd "$WORK"
 
     # 파이썬 및 필요한 패키지 설치
@@ -63,8 +62,10 @@ case $choice in
 
     echo -e "${GREEN}해당 사이트에 가입을 진행해주세요: https://hanafuda.hana.network/dashboard${NC}"
     read -p "가입을 하셨다면 엔터를 눌러주세요.: "
-    echo -e "${GREEN}해당 사이트에서 Deposit을 진행하세요: https://hanafuda.hana.network/deposit${NC}"
+    echo -e "${GREEN}해당 사이트에서 Deposit을 1회 진행하세요: https://hanafuda.hana.network/deposit${NC}"
     read -p "Deposit을 하셨다면 엔터를 눌러주세요.: "
+    echo -e "${YELLOW}이 봇은 자동 디파짓 기능만 있습니다. 사용자는 대쉬보드에서 Gorw 및 Drawhanafuda를 수동으로 진행하셔서 에어드랍 작업을 진행하셔야합니다.${NC}"
+    read -p "확인하셨으면 엔터를 눌러주세요..: "
 
     # 봇 구동
     python3 bot.py
